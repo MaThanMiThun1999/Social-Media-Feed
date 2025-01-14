@@ -1,0 +1,34 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": ".*"
+        }
+      ]
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "all"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain"
+        }      ]
+    }
+  ]
+}
